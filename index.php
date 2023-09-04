@@ -14,7 +14,7 @@ if(isset($_SESSION["error"])) $error = '<div class="alert alert-warning">'.$_SES
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="canonical" href="https://sysmika.org/">
+  <link rel="canonical" href="https://galaxy.orion.com.ar/">
   <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -53,10 +53,11 @@ if(isset($_SESSION["error"])) $error = '<div class="alert alert-warning">'.$_SES
     </div>
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">Orion System <small>(class GALAXY)</small></p>
-    <p class="mt-5 mb-3 text-muted">&copy; 1999–<?= date("Y");?></p>
   </form>
 </main>
+<foo>
+    <span class="mt-5 mb-3 text-muted">Orion System <small>(class GALAXY)</small>   &copy; 1999–<?= date("Y");?></span>
+</foo>
 
 
     

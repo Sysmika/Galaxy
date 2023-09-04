@@ -79,26 +79,6 @@ class Generales extends Consultas{
     
     
     
-
-///////////////////////////// FUNCION TURNOS //////////////////////
-    public function daysToEnglish($day){
-        return match ($day) {
-          'lunes' => "0",
-          'martes' => "1",
-          'miercoles' => "2",
-          'jueves' => "3",
-          'viernes' => "4",
-          'sabado' => "5",
-        };
-            }
-    public function cuenta_dias($mes,$anio,$numero_dia){
-                $count=0;
-                $dias_mes=cal_days_in_month(CAL_GREGORIAN, $mes, $anio);
-                for($i=1;$i<=$dias_mes;$i++)
-                if(date('N',strtotime($anio.'-'.$mes.'-'.$i))==$numero_dia)
-                $count++;
-                return $count;
-    }
     
 ///////////////////////////// FUNCION ESPACIOS EN BLANCO //////////////////////
 	public function espacios ($campo,$cant)

@@ -7,5 +7,5 @@ $Q_login    = $mysqli->query("UPDATE login SET salida = '".date("Y-m-d H:i:s")."
 @mysqli_close($mysqli);
 if(!$_POST['unload']){
 ?>
-<Script language="javascript">window.location="../login.php"</script>
+<Script language="javascript">window.location="../index.php"</script>
 <? }?>

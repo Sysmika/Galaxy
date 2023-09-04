@@ -12,7 +12,7 @@ if(isset($_POST['id'])){
 }else{
    $_POST['id'] = '';
 }
-print_r($_POST['id']);
+//print_r($_POST['id']);
 ?>
 <?
 if(!in_array('sinboton',$_EXNTS)){
@@ -390,20 +390,11 @@ unset($t1,$t2,$t3,$t4,$t5,$t6,$t7,$t8,$t9,$catfatherid_1,$catfatherid_2,$catfath
 ?>
 </div>
 </form>
-<?  
-    $panel = '';
-    if(isset($_POST['origin'])){
-        $_PGNC=$_POST['origin'];
-        $_POST['refP'] = "panel-content";
-        $panel = '&panel=true';
-    }
-?>
 <?
 if($UPLDIMG){
       include("../../bat/inc_upload.php");
 }?>
  <div class="container mb-5">
-
 <?
 if($_TBL == 'notificaciones'){?>
      <button class="btn btn-sm btn-success" onClick="linkAction('bat/send_submit.php','f_<?=$_TBL?>','respEdit','submit')"><i class="bi bi-save"></i> Guardar Y <i class="bi bi-envelope"></i> Enviar</button>     

@@ -1,19 +1,9 @@
 <?
-/*////////////////////////////////////////////////////////////
-    define('DB_DRIVER' 	 ,'mysql');
-	define('DB_HOSTNAME' ,'localhost');
-	define('DB_USERNAME' ,'');
-	define('DB_PASSWORD' ,'');
-	define('DB_DATABASE' ,'');
-	define('DB_CHARSET'	 ,'utf-8'); 	
-	define('DB_PORT'	 ,'3306'); 
-/*////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////*/
     define('DB_DRIVER' 		,'mysql');
 	define('DB_HOSTNAME' 	,'localhost');
-	define('DB_USERNAME' 	,'root');
-	define('DB_PASSWORD' 	,'Miguel#1960');
-	define('DB_DATABASE' 	,'bulk'); 
+	define('DB_USERNAME' 	,'orion202_master');
+	define('DB_PASSWORD' 	,'?wBE8Rh[sezn');
+	define('DB_DATABASE' 	,'galaxy');
 	define('DB_CHARSET'	    ,'utf-8'); 	
 	define('DB_PORT'		,'3306'); 
 /*////////////////////////////////////////////////////////////

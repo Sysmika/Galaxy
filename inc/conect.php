@@ -1,5 +1,8 @@
 <?PHP
 	session_start();
+if(!isset($_SESSION['id_user'])){
+    header('Location: '.$_SERVER['document_root'].'/inc/logout.php');
+}
 	include_once("db.php"); 					// DATOS DE CONEXION BASE DE DATOS Y MSQLI
 
 	include_once("classes/class.DB.php"); 		// CONEXION BASE DE DATOS  						
