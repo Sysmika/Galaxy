@@ -23,35 +23,45 @@ include( 'inc/conect.php' );
   </div>
   <div class="offcanvas-body">
     <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
     <button class="btn btn-secondary" type="button">A Button</button>
   </div>
 </div>
   <aside>
     <div class="d-flex flex-column flex-shrink-0 bg-light">
       <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-        <li class="nav-item"><a href="#" class="nav-link active py-3 border-bottom" aria-current="page" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi bi-house" data-bs-toggle="offcanvas" data-bs-target="#topcanvas"></i></a> </li>
-        <li> <a href="#" onClick="linkAction ('clientes.php','','alpha','search')" class="nav-link py-3 border-bottom" title="Clientes" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi bi-people-fill"></i> </a> </li>
-        <li> <a href="#" onClick="linkAction ('gestores.php','','alpha','search')" class="nav-link py-3 border-bottom" title="Gestores" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi bi-boxes"></i> </a> </li>
-        <li> <a href="#" onClick="linkAction ('parametros.php','','alpha','search')" class="nav-link py-3 border-bottom" title="Parametros" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi bi-diagram-3"></i> </a> </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link active py-3 border-bottom" aria-current="page" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi bi-house" data-bs-toggle="offcanvas" data-bs-target="#topcanvas"></i></a> </li>
+          
+<?
+     ksort( $_SESSION['ACCESO'] );
+      foreach ( $_SESSION['ACCESO'] as $KEY_a => $VALa ) {
+                if ( $KEY_a != 'Config' ) {
+        $V_ARR = explode( '-', $KEY_a );
+                  if ( $V_ARR[1] == 'Diario' ) {
+                    $_ico = '<i class="bi bi-download"></i>';
+                  } else {
+                    $_ico = '<i class="bi bi-save2"></i>';
+                  }
+?>
+      <li class="nav-item dropdown border-top" title="<?=$V_ARR[1]?>" data-bs-toggle="tooltip" data-bs-placement="right"> 
+           <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false"><?=$_ico?> </a>
+        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+<?        
+      foreach ($VALa as $KEY => $VAL) {
+?>
+        <li class="nav-item"> <a href="#" onClick="linkAction ('<?=$KEY?>.php','','alpha','search')" class="nav-link py-3 border-bottom"> <?= $VAL?> </a> </li>
+<? }?>          
+        </ul>
+      </li>
+<? }?>
+        
+<? }?>          
       </ul>
+          
       <div class="dropdown border-top"> <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false"> <img src="img/logo/logo.png" alt="mdo" width="24" height="24" class="rounded-circle"> </a>
         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
-          <li><a class="dropdown-item" href="#"  onClick="linkAction ('settings/config.php','','alpha','search')">Settings</a></li>
-          <!--<li><a class="dropdown-item" href="#">Profile</a></li>-->
+          <li><a class="dropdown-item" href="#" onClick="linkAction ('settings/config.php','','alpha','search')">Settings</a></li>
+          <li><a class="dropdown-item" href="#" onClick="linkAction ('help.php','','alpha','search')">Manual</a></li>
           <li><a class="dropdown-item" href="https://soporte.sysmika.ar" target="_blank">Support</a></li>
           <li><a class="dropdown-item" href="#"  onClick="linkAction ('about.php','','alpha','search')">About</a></li>
           <li>

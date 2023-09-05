@@ -52,10 +52,13 @@
       <button class="btn btn-secondary" type="button" onClick="linkAction('<?=$_RTN?>','search='+encodeURIComponent(document.getElementById('search').value),'alpha','search')"><i class="bi bi-search cpoint"></i> Buscar</button>
     </div>
   </div>
-  <div class="row">
+  <div class="row mt-2">
     <div class="col-lg-12">
       <section class="border rounded">
         <header class="h6 p-2 text-capitalize"> <?=$_TBL?> </header>
+          
+          
+          
         <? include("../tmpls/listado.php");?>
       </section>
     </div>

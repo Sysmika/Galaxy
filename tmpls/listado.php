@@ -84,7 +84,7 @@ if($LST_MBR == 0){echo'<div class="alert alert-danger text-center"><strong>ERROR
                  }else{
 	foreach ($LST_MBR as $KY => $VL){
 ?>
-                            <th id="<?=$VL['id']?>">
+        <th id="th<?=$VL['id']?>">
 
 <?            
         
@@ -159,7 +159,7 @@ if($LST_MBR == 0){echo'<div class="alert alert-danger text-center"><strong>ERROR
                         <a class="btn btn-info btn-sm cpoint myModal text-white" data-id="<?=$VL['id']?>" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-save"></i></a>
                         <?}?>
                         <? if ($NODEL  == false){?>
-                        <a class="btn btn-danger btn-sm cpoint text-white" onClick="linkAction('bat/delete.php','id=<?=$VL['id']?>','respEdit','delete')"><i class="bi bi-trash3"></i></a>
+                        <a class="btn btn-danger btn-sm cpoint text-white" onClick="linkAction('bat/delete.php','id=<?=$VL['id']?>&tabla=<?=$_TBL?>','<?=$_TBL?>_<?=$VL['id']?>','delete')"><i class="bi bi-trash3"></i></a>
                         <?}?>
                     </div>
                 </td>

@@ -1,8 +1,8 @@
 <?  $TCAT="config";include("../inc/conect.php");?>
 <?
 /////////////////////// BACH BORRADO /////////////////////////
-if($_POST['delete']){
-    $CNSLTS->eliminar_varios('login'," salida != 0");
+if(isset($_POST['delete'])){
+    $CNSLTS->eliminar_varios('login'," id > 0");
 }
 ?>
 <section class="wrapper">
@@ -15,7 +15,7 @@ if($_POST['delete']){
     <!-- page start-->
     <div class="btn-row mt-4">
         <div class="btn-group">
-<button class="btn btn-light" type="button" data-action="delete" data-uri="config/login" data-capa="main-content" data-frm="1&menu=1&delete=all"><i class="fa fa-trash cpoint"></i> Eliminar pasados</button>
+<button class="btn btn-secondary" type="button" onClick="linkAction('settings/login.php','delete=all','alpha','delete')"><i class="fa fa-trash cpoint"></i> Eliminar todos</button>
             <div class="btn-group" id="top_menu">
                 <!--  search form start -->
                 <ul class="nav top-menu">
@@ -28,7 +28,8 @@ if($_POST['delete']){
                 </ul>
                 <!--  search form end -->
             </div>
-<button class="btn btn-secondary" type="button"><i class="fa fa-search cpoint" data-capa="main-content" data-uri="config/login" data-extra="menu=<?=$_POST["menu"];?>"></i> Buscar</button>
+      <button class="btn btn-secondary" type="button" onClick="linkAction('settings/login.php','search='+encodeURIComponent(document.getElementById('search').value),'alpha','search')"><i class="bi bi-search cpoint"></i> Buscar</button>
+
         </div>
     </div>
 
@@ -47,7 +48,6 @@ if($_POST['delete']){
                     $_LST_Ar		= explode(",",$_LST);
                     $ARR_XTRA_TBL	= array("user"=>"user*members");
                     $RegistrosAMostrar	= "20";
-                    $NOEDIT         = true; 
                     $NODEL          = 0;
                     $NOACT          = 1;
                 
@@ -138,11 +138,8 @@ if($LST_MBR == 0){echo'<div class="alert alert-danger text-center"><strong>ERROR
                 </td>
                 <td class="hidden-print">
                     <div class="btn-group">
-                        <? if ($NOEDIT  == false){?>
-                        <a class="btn btn-success cpoint" data-action="edit" data-capa="dialog-response" data-menu="<?=$_POST['menu']?>&modal=true" data-title="Edicion de <?= $_LST_Ar[1]?>" data-uri="<?=$data_uri?>" data-frm="<?=$VL['id']?>" id="<?=$VL['id']?>"><i class="bi bi-arrow-down-circle"></i></a>
-                        <?}?>
                         <? if ($NODEL  == false){?>
-                        <a class="btn btn-danger cpoint" <?=$dsbld?> data-uri="bat/delete" data-action="delete" data-page-ref="<?=$_POST['id']?>" data-capa="<?=$_TBL?>_<?=$VL['id']?>" data-frm="<?= $VL["id"]?>&tabla=<?=$_TBL?>"><i class="bi bi-trash"></i></a>
+                        <a class="btn btn-danger btn-sm cpoint" <?=$dsbld?> onClick="linkAction('bat/delete.php','id=<?=$VL['id']?>&tabla=<?=$_TBL?>','<?=$_TBL?>_<?=$VL['id']?>','delete')"><i class="bi bi-trash"></i></a>
                         <?}?>
                     </div>
                 </td>
