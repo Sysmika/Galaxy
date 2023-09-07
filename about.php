@@ -1,7 +1,7 @@
 <div class="container bg-light mt-5 border rounded p-2">
   <div class="row">
     <div class="col-lg-12">
-      <h3 class="page-header"><i class="fa fa-clipboard"></i> Orion - Clase Galaxia</h3>
+      <h3 class="page-header"><i class="fa fa-clipboard"></i> Orion - Galaxy Class</h3>
     </div>
   </div>
   <? include("../bat/nav.php");?>
@@ -18,7 +18,7 @@
       <div class="col-lg-2 text-underline text-bolder">02-09-2023</div>
       <div class="col-lg-10"> <span class="badge bg-secondary">New</span> <span class="text-dark h4">New V1.0</span>
         <ul>
-          <li>Class Galaxy
+          <li>Galaxy Class
             <ol>
               <li>Parameters</li>
               <li>Estructure</li>

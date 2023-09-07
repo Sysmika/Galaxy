@@ -1,24 +1,16 @@
 <? include("../inc/conect.php");?>
 <?
-        // extras para logeo
-        $PRM = "AND id = " . $_AACOUNT;
-        if ( $_SESSION['SUPERUSER'] == 'SI' ) {
-          $PRM = '';
-        }
-        if ( $_AACOUNT == 2 ) {
-          $PRM = "AND id >= " . $_AACOUNT;
-        }
         // fin extras
         //echo $PRM;
-        $_TBL               = "";                       // TABLA DE LISTADO                      
-        $_RTN               = "";                       // URL RETORNO 
-        $_LST               = '';                       // CAMPOS|COLUMNAS
-        $_LST_HDDN          = 'id';                     // ADICIONAL QUERY NO SE MUESTRA EN LAS COLUMNAS
-        $_ORDER             = $PRM . "";                // ADICIONAL WHEREs & REQUEST ORDER 
-        $data_uri           = "";                       // URL DE EDICIÓN
+        $_TBL               = "compras";                       // TABLA DE LISTADO                      
+        $_RTN               = "diario/compras.php";                       // URL RETORNO 
+        $_LST               = 'fecha,concepto,proveedor';                       // CAMPOS|COLUMNAS
+        $_LST_HDDN          = ',id';                     // ADICIONAL QUERY NO SE MUESTRA EN LAS COLUMNAS
+        $_ORDER             = " ORDER BY fecha DESC";                // ADICIONAL WHEREs & REQUEST ORDER 
+        $data_uri           = "diario/edit/compra";                       // URL DE EDICIÓN
         $_LST_Ar            = explode(",",$_LST);       // CREO ARRAY CON EL LISTADO DE CAMPOS
         $ARR_XTRA_TBL       = [];                       // CREO ARRAY CON CAMPOS REFERIDOS A OTRAS TABLAS | FORMATO ("campo"=>"campo de la tabla*tabla")
-        $RegistrosAMostrar  = "";                       // CANTIODAD DE REGISTROS A MOSTRAR PRO PAGINA
+        $RegistrosAMostrar  = "10";                       // CANTIDAD DE REGISTROS A MOSTRAR POR PÁGINA
         $NOEDIT             = 0;                        // TRUE NO PERMITE EDICIÓN
         $NODEL              = 0;                        // TRUE NO PERMITE BORRADO
         $UPLDIMG            = 0;                        // TRUE INCLUYE UPLOADS DE ARCHIVOS
@@ -29,7 +21,7 @@
 <section class="wrapper">
   <div class="row">
     <div class="col-lg-12">
-      <h3 class="text-capitalize"><i class="bi bi-buildings"></i> <?=$_TBL?></h3>
+      <h3 class="text-capitalize"><i class="bi bi-bag"></i> <?=$_TBL?></h3>
     </div>
   </div>
   <?

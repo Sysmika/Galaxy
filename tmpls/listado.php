@@ -3,6 +3,7 @@
         <thead>
             <tr>
                 <?	
+                
                 $clsp    = count($_LST_Ar) + 1;
                 foreach ($_LST_Ar as $K => $V){ 
             if(($V == 'activo') or ($V == 'destacado')){}else{
@@ -32,7 +33,7 @@
                 <th>MP</th>
                 <?}?>
                 
-               <th class="hidden-print text-center"><i class="icon_cogs"></i></th>
+               <th class="hidden-print text-center"><i class="bi bi-gear"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -44,6 +45,8 @@
   	$busca		= $_POST['busca'];
   	$adicional	= '';
   	$adicvar	= '';
+    $_XTR       = '';        
+  	$filtro	    = "WHERE ACCOUNT = '".$AACOUNT."' ";;
     if(isset($_POST['panel'])){
         $filtro	    = "WHERE cliente = '".$_POST['id']."' ";
         $adicvar	= "&cliente=".$_POST['id']."&id=".$_POST['id'];
@@ -76,8 +79,10 @@
 		  $RegistrosAEmpezar	= 0;
 		  $PagAct				= 1;
 	 }
-$_XTR		= $_ORDER." LIMIT ".$RegistrosAEmpezar.", ".$RegistrosAMostrar." ";
-//print_r($_TBL);          
+     if($NOPAG){
+            $_XTR		= $_ORDER." LIMIT ".$RegistrosAEmpezar.", ".$RegistrosAMostrar." ";
+     }        
+//print_r('#'.$_LST.'|'.$_LST_HDDN.'||'.$_TBL.'||'.$filtro.'|'.$_XTR);          
             
 $LST_MBR	= $CNSLTS->listar($_LST.$_LST_HDDN,$_TBL,$filtro.$_XTR);
 if($LST_MBR == 0){echo'<div class="alert alert-danger text-center"><strong>ERROR</strong>, no hay resultados</div>';

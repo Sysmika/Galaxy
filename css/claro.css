@@ -1,0 +1,17 @@
+/* CSS Document */
+body {
+    font-family: 'Comfortaa', cursive;
+}
+
+aside {
+    border-right: 1px solid #999;
+    background-color:#F1F1F1;
+}
+
+#alpha{
+}
+foo{
+    border-top: 1px solid #999;
+    background-color: #F1F1F1;
+    color: black;
+}

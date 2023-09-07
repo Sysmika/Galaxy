@@ -11,6 +11,8 @@ include( 'inc/conect.php' );
 <link rel="canonical" href="https://sysmika.org/panel.php">
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link href="css/<?=$PRFRNC[0]['estilo']?>.css?<?=rand(10,200)?>" rel="stylesheet">
+
 <script defer src="js/bootstrap.js"></script> 
 <script defer src="js/orion.js"></script> 
 <script defer src="js/sidebars.js"></script>
@@ -26,8 +28,10 @@ include( 'inc/conect.php' );
     <button class="btn btn-secondary" type="button">A Button</button>
   </div>
 </div>
+    <time id="time"></time>
+    <div id="help"><i class="bi bi-info-circle-fill"></i></div>
   <aside>
-    <div class="d-flex flex-column flex-shrink-0 bg-light">
+    <div class="d-flex flex-column flex-shrink-0">
       <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
         <li class="nav-item">
             <a href="#" class="nav-link active py-3 border-bottom" aria-current="page" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right"> <i class="bi bi-house" data-bs-toggle="offcanvas" data-bs-target="#topcanvas"></i></a> </li>
@@ -38,9 +42,9 @@ include( 'inc/conect.php' );
                 if ( $KEY_a != 'Config' ) {
         $V_ARR = explode( '-', $KEY_a );
                   if ( $V_ARR[1] == 'Diario' ) {
-                    $_ico = '<i class="bi bi-download"></i>';
+                    $_ico = '<i class="bi bi-folder-symlink"></i>';
                   } else {
-                    $_ico = '<i class="bi bi-save2"></i>';
+                    $_ico = '<i class="bi bi-journal-plus"></i>';
                   }
 ?>
       <li class="nav-item dropdown border-top" title="<?=$V_ARR[1]?>" data-bs-toggle="tooltip" data-bs-placement="right"> 
@@ -58,7 +62,7 @@ include( 'inc/conect.php' );
 <? }?>          
       </ul>
           
-      <div class="dropdown border-top"> <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false"> <img src="img/logo/logo.png" alt="mdo" width="24" height="24" class="rounded-circle"> </a>
+      <div class="dropdown border-top bg-light text-dark"> <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false"> <img src="img/logo/logo.png" alt="mdo" width="24" height="24" class="rounded-circle"> </a>
         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
           <li><a class="dropdown-item" href="#" onClick="linkAction ('settings/config.php','','alpha','search')">Settings</a></li>
           <li><a class="dropdown-item" href="#" onClick="linkAction ('help.php','','alpha','search')">Manual</a></li>
@@ -72,16 +76,20 @@ include( 'inc/conect.php' );
       </div>
     </div>
   </aside>
-  <div id="alpha" class="bg-white">
-      <pre><? print_r($_SESSION)?></pre>
+  <div id="alpha" class="" style="background-image: url('img/background/<?=$PRFRNC[0]['fondo']?>.jpg')">
+      <!--<pre><? print_r($_SESSION)?></pre>-->
   </div>
+<foo>
+    <span class="mt-5 mb-3">Orion System <small>(class GALAXY)</small>   &copy; 1999–<?= date("Y");?></span>
+</foo>
+    
     <!-- The Modal -->
 <div class="modal" id="myModal">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
 
       <!-- Modal Header -->
-      <div class="modal-header">
+      <div class="modal-header bg-light">
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 

@@ -5,6 +5,7 @@ _notes/
 /bower_components/
 /node_modules/
 *- Copia.php
+error_log
 #/bat/login.php
 #/inc/db.php
 #/img/

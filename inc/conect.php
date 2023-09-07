@@ -18,4 +18,6 @@ if(!isset($_SESSION['id_user'])){
 
 	///////////////////////////// VARIABLES GLOBALES ///////////////////////
 	$TODAY	  = date("Y-m-d");
+	$ACCOUNT  = $_SESSION['ACCOUNT'];
+    $PRFRNC   = $CNSLTS->full_list('preferencias',"WHERE usuario = ".$_SESSION['id_user']."");
 ?>

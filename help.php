@@ -1,6 +1,6 @@
 <? include("inc/conect.php");?>
 
-<section class="border rounded p-2">
+<section class="border rounded p-2 wrapper">
   <div class="row">
     <div class="col-lg-12">
       <h3 class="page-header"><i class="bi bi-info-square"></i> Ayuda | Uso del sistema</h3>

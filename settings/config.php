@@ -27,7 +27,7 @@ if($q_preference){
         <input type="hidden" value="<?=$_COOKIE['id']?>" name="usuario">
       <div class="card">
         <div class="card-header h2"><strong>Personalizar</strong></div>
-        <div class="card-body traslucido">
+        <div class="card-body">
             <div class="row py-1">
                 <div class="col-12 mb-2">Esquema de Colores</div>
                 <div class="col-4 small">
